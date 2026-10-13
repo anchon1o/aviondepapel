@@ -690,6 +690,11 @@ Object.assign(I18N.gl,{daily:'Reto diario',dailyTitle:'Reto do {d}',dailyDone:'F
 Object.assign(I18N.es,{daily:'Reto diario',dailyTitle:'Reto del {d}',dailyDone:'Hecho hoy: {r}. ¡Vuelve mañana!',dailyNote:'Hoy te presto yo el avión: un {p} de {q}. El mismo para todo el mundo.',dailyRules:'Tres lanzamientos, cuenta el mejor. Sin desgaste ni dinero: solo tu mano.',dailyPlay:'Jugar',dailyPar:'Mejor tiro posible hoy: {p}',streak:'Racha de {n} días',share:'Compartir',copied:'¡Copiado!',dailyNext:'Mañana habrá otro lugar y otro avión.'});
 Object.assign(I18N.ca,{daily:'Repte diari',dailyTitle:'Repte del {d}',dailyDone:'Fet avui: {r}. Torna demà!',dailyNote:'Avui et deixo jo l’avió: un {p} de {q}. El mateix per a tothom.',dailyRules:'Tres llançaments, compta el millor. Sense desgast ni diners: només la teva mà.',dailyPlay:'Jugar',dailyPar:'Millor tir possible avui: {p}',streak:'Ratxa de {n} dies',share:'Compartir',copied:'Copiat!',dailyNext:'Demà hi haurà un altre lloc i un altre avió.'});
 Object.assign(I18N.eu,{daily:'Eguneko erronka',dailyTitle:'{d}ko erronka',dailyDone:'Gaur eginda: {r}. Itzuli bihar!',dailyNote:'Gaur nik uzten dizut hegazkina: {p} bat, {q}. Berbera guztiontzat.',dailyRules:'Hiru jaurtiketa, onenak balio du. Higadurarik eta dirurik gabe: zure eskua bakarrik.',dailyPlay:'Jokatu',dailyPar:'Gaurko jaurtiketarik onena: {p}',streak:'{n} eguneko bolada',share:'Partekatu',copied:'Kopiatuta!',dailyNext:'Bihar beste toki bat eta beste hegazkin bat egongo dira.'});
+
+Object.assign(I18N.gl,{rankToday:'Ranking de hoxe',nick:'O teu alcume',send:'Enviar',sentOk:'Enviado ao ranking!',rankNone:'Aínda ninguén. Sé o primeiro!',rankOff:'O ranking funciona na versión publicada en Vercel.',rankErr:'Non se puido conectar co ranking.'});
+Object.assign(I18N.es,{rankToday:'Ranking de hoy',nick:'Tu alias',send:'Enviar',sentOk:'¡Enviado al ranking!',rankNone:'Aún nadie. ¡Sé el primero!',rankOff:'El ranking funciona en la versión publicada en Vercel.',rankErr:'No se pudo conectar con el ranking.'});
+Object.assign(I18N.ca,{rankToday:'Rànquing d’avui',nick:'El teu àlies',send:'Enviar',sentOk:'Enviat al rànquing!',rankNone:'Encara ningú. Sigues el primer!',rankOff:'El rànquing funciona a la versió publicada a Vercel.',rankErr:'No s’ha pogut connectar amb el rànquing.'});
+Object.assign(I18N.eu,{rankToday:'Gaurko sailkapena',nick:'Zure ezizena',send:'Bidali',sentOk:'Sailkapenera bidalita!',rankNone:'Inor ez oraindik. Izan lehena!',rankOff:'Sailkapenak Vercelen argitaratutako bertsioan funtzionatzen du.',rankErr:'Ezin izan da sailkapenarekin konektatu.'});
 // ===== SON (sintetizado, sen ficheiros) =====
 const SND=(()=>{
  let ctx=null,master=null,amb=null,noiseBuf=null;
@@ -1677,14 +1682,38 @@ function dailyShow(){
  <p style="font-size:2rem;text-align:center;margin:8px 0;letter-spacing:4px">${st.sq}</p>
  <p style="text-align:center"><b style="font:700 1.4rem var(--draft)">${esc(fmtScore(D.v,st.best))}</b><br><span class="muted">${esc(t('dailyPar',{p:fmtScore(D.v,D.par)}))}</span></p>
  <p style="text-align:center">🔥 ${esc(t('streak',{n:S.dstreak||1}))}</p>
+ <div id="dRank"></div>
  <pre style="background:var(--paper2);padding:10px;border-radius:4px;white-space:pre-wrap;font-size:.85rem">${esc(dailyText())}</pre>
  <div class="row" style="justify-content:space-between"><button class="btn small" data-closefly>${esc(t('back'))}</button><button class="btn primary" id="dailyShare">${esc(t('share'))}</button></div>
  <p class="muted" style="text-align:center;font-size:.8rem">${esc(t('dailyNext'))}</p>`);
+ dailyRankFill();
 }
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
  if(b.id==='mDaily'){dailyStart();return}
  if(b.id==='dailyGo'){dailyGo();return}
  if(b.id==='dailyShare'){const txt=dailyText();if(navigator.share){navigator.share({text:txt}).catch(()=>{})}else if(navigator.clipboard){navigator.clipboard.writeText(txt).then(()=>toast(t('copied'))).catch(()=>{})}return}
+});
+// ===== RANKING DO RETO DIARIO (Supabase, proxecto «xogos», prefixo avp_) =====
+const SUPA={url:'https://pmvbllviitutbnoqpnrs.supabase.co',key:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtdmJsbHZpaXR1dGJub3FwbnJzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4MTE3NTAsImV4cCI6MjEwNTM4Nzc1MH0.5WMnLv9oY3PXXLjCrxukt6qu2xkNwOvrkbcxYqUrdgo'};
+const supaOK=()=>SUPA.key&&!SUPA.key.startsWith('PEGA');
+function supaH(){return {apikey:SUPA.key,Authorization:'Bearer '+SUPA.key,'Content-Type':'application/json'}}
+function myId(){if(!S.pid){S.pid=(crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g,()=>(Math.random()*16|0).toString(16)));save()}return S.pid}
+async function supaSend(row){const r=await fetch(SUPA.url+'/rest/v1/avp_reto',{method:'POST',headers:{...supaH(),Prefer:'return=minimal'},body:JSON.stringify(row)});if(!r.ok&&r.status!==409)throw new Error(r.status)}
+async function supaTop(dia,kind,n=10){const ord=kind==='aim'?'valor.asc':'valor.desc';const r=await fetch(`${SUPA.url}/rest/v1/avp_reto?select=nome,valor,cadrados&dia=eq.${dia}&order=${ord},creado.asc&limit=${n}`,{headers:supaH()});if(!r.ok)throw new Error(r.status);return r.json()}
+async function dailyRankFill(){
+ const box=$('dRank');if(!box)return;const D=dailyInfo(),st=dailyState();
+ if(!supaOK()){box.innerHTML=`<p class="muted" style="font-size:.8rem">${esc(t('rankOff'))}</p>`;return}
+ box.innerHTML=`<p class="muted">…</p>`;
+ try{const rows=await supaTop(D.key,D.v.kind,10);
+  box.innerHTML=`<p class="lbl2">${esc(t('rankToday'))}</p>`+(rows.length?`<table class="rank">${rows.map((r,i)=>`<tr class="${st&&st.sent&&r.nome===S.nick&&Math.abs(r.valor-st.best)<1e-6?'me':''}"><td>${i+1}.</td><td>${esc(r.nome)}</td><td>${esc(r.cadrados||'')}</td><td style="text-align:right">${esc(fmtScore(D.v,r.valor))}</td></tr>`).join('')}</table>`:`<p class="muted">${esc(t('rankNone'))}</p>`)
+  +(st&&st.done&&!st.sent?`<div class="row" style="margin-top:6px"><input id="nickIn" class="txt" style="flex:1;margin:0" maxlength="16" placeholder="${esc(t('nick'))}" value="${esc(S.nick||'')}"><button class="btn primary small" id="sendRank">${esc(t('send'))}</button></div>`:'');
+ }catch(e){box.innerHTML=`<p class="muted" style="font-size:.8rem">${esc(t('rankErr'))}</p>`}
+}
+document.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b||b.id!=='sendRank')return;
+ const nick=($('nickIn').value||'').trim().slice(0,16);if(nick.length<2){$('nickIn').focus();return}
+ S.nick=nick;save();const D=dailyInfo(),st=dailyState();b.disabled=true;
+ try{await supaSend({dia:D.key,xogador:myId(),nome:nick,modalidade:D.v.kind,valor:Math.round(st.best*100)/100,cadrados:st.sq});st.sent=1;save();toast(t('sentOk'));dailyRankFill()}
+ catch(err){b.disabled=false;toast(t('rankErr'))}
 });
 // ===== TORNEOS: maletín limitado de avións e probas sorpresa =====
 const TOURS=[

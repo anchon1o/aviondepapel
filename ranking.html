@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="gl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avión de papel · Ranking</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7e7d3;--card:#fff8ef;--ink:#2e2e2e;--muted:#7a6656;--red:#c85b47;--line:rgba(46,46,46,.14)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 'Montserrat','Segoe UI',sans-serif;padding:14px}
+.card{background:var(--card);border-radius:6px;box-shadow:0 2px 3px rgba(120,60,30,.1),0 8px 18px -8px rgba(120,60,30,.28);padding:14px 16px;max-width:520px;margin:0 auto}
+h1{font:700 1.35rem 'Playfair Display',Georgia,serif;margin:0 0 2px}.sub{color:var(--muted);font-size:.85rem;margin:0 0 10px}
+table{width:100%;border-collapse:collapse}td{padding:6px 4px;border-bottom:1px solid var(--line)}td.n{width:2em;color:var(--muted)}td.v{text-align:right;font-weight:700}
+tr.top1 td{color:var(--red);font-weight:700}.empty{color:var(--muted);text-align:center;padding:16px 0}
+</style></head><body><div class="card"><h1 id="t"></h1><p class="sub" id="s"></p><div id="r"></div></div>
+<script>
+const SUPA={url:'https://pmvbllviitutbnoqpnrs.supabase.co',key:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtdmJsbHZpaXR1dGJub3FwbnJzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4MTE3NTAsImV4cCI6MjEwNTM4Nzc1MH0.5WMnLv9oY3PXXLjCrxukt6qu2xkNwOvrkbcxYqUrdgo'};
+const Q=new URLSearchParams(location.search),lang=['gl','es','ca','eu'].includes(Q.get('lang'))?Q.get('lang'):'gl',n=Math.max(1,Math.min(50,+Q.get('n')||10)),p=Q.get('p')||'hoxe';
+const T={gl:{t:'Avión de papel',s:'Reto do {d}',e:'Aínda ninguén xogou este reto.',err:'Non se puido cargar o ranking.',aim:'a {x} m da diana'},
+ es:{t:'Avión de papel',s:'Reto del {d}',e:'Aún nadie ha jugado este reto.',err:'No se pudo cargar el ranking.',aim:'a {x} m de la diana'},
+ ca:{t:'Avió de paper',s:'Repte del {d}',e:'Encara ningú ha jugat aquest repte.',err:'No s’ha pogut carregar el rànquing.',aim:'a {x} m de la diana'},
+ eu:{t:'Paperezko hegazkina',s:'{d}ko erronka',e:'Inork ez du erronka hau jokatu oraindik.',err:'Ezin izan da sailkapena kargatu.',aim:'itutik {x} m-ra'}}[lang];
+const key=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+let dia=/^\d{4}-\d{2}-\d{2}$/.test(p)?p:key(new Date(Date.now()-(p==='onte'?864e5:0)));
+const [Y,M,D]=dia.split('-');document.getElementById('t').textContent=T.t;document.getElementById('s').textContent=T.s.replace('{d}',(+D)+'/'+(+M));
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=(k,v)=>{const x=String((Math.round(v*10)/10).toFixed(1)).replace('.',',');return k==='aim'?T.aim.replace('{x}',x):x+(k==='time'?' s':' m')};
+(async()=>{const box=document.getElementById('r');
+ try{const h={apikey:SUPA.key,Authorization:'Bearer '+SUPA.key};
+  const a=await (await fetch(`${SUPA.url}/rest/v1/avp_reto?select=modalidade&dia=eq.${dia}&limit=1`,{headers:h})).json();
+  if(!a.length){box.innerHTML=`<p class="empty">${T.e}</p>`;return}
+  const k=a[0].modalidade,ord=k==='aim'?'valor.asc':'valor.desc';
+  const rows=await (await fetch(`${SUPA.url}/rest/v1/avp_reto?select=nome,valor,cadrados&dia=eq.${dia}&order=${ord},creado.asc&limit=${n}`,{headers:h})).json();
+  box.innerHTML=`<table>${rows.map((r,i)=>`<tr class="${i?'':'top1'}"><td class="n">${i+1}.</td><td>${esc(r.nome)}</td><td>${esc(r.cadrados||'')}</td><td class="v">${fmt(k,r.valor)}</td></tr>`).join('')}</table>`;
+ }catch(e){box.innerHTML=`<p class="empty">${T.err}</p>`}})();
+</script></body></html>

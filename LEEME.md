@@ -26,11 +26,31 @@ Esta carpeta xa está lista: `index.html` é o xogo completo (as ilustracións v
 3. En vercel.com: Add New → Project → Import o repositorio → Deploy.
 4. Cada vez que subas un `index.html` novo ao repositorio, Vercel publícao só.
 
+## Supabase: ranking do reto diario
+
+O ranking vai no teu proxecto **xogos**, coa táboa `avp_reto` (prefixo `avp_`). Só funciona na versión publicada en Vercel, non no artefacto de claude.ai.
+
+1. Entra en supabase.com e abre o proxecto **xogos**.
+2. No menú da esquerda, **SQL Editor** → **New query**.
+3. Abre `avp_reto.sql` (desta carpeta) cun editor de texto, copia todo, pégao e preme **Run**. Debe saír «Success. No rows returned».
+4. En **Table Editor** comproba que aparece a táboa `avp_reto`.
+5. Vai a **Project Settings → API Keys** e copia a chave pública: «anon public» (ou «Publishable key»). Esa pode ir no código. **Nunca** uses a «service_role» nin a «secret».
+6. A chave pública xa vai metida en `index.html` e `ranking.html`: non tes que tocar nada.
+7. Publica de novo con `vercel --prod`.
+8. Proba: xoga o reto diario, envía o teu alcume e abre `https://aviondepapel.vercel.app/ranking.html`.
+
+Seguridade: calquera pode ler o ranking e engadir o seu resultado de hoxe (un por persoa e día), pero ninguén pode editar nin borrar desde o xogo.
+
 ## Para cagando
 
 - Icono: `aviondepapel.png` (512×512, coas esquinas redondeadas).
 - Cor de post-it proposta: `#5B8F7B` (verde da paleta do xogo).
 - Ligazón: https://aviondepapel.vercel.app (ou o nome que escollas no paso 6).
+- Ranking para o panel: `https://aviondepapel.vercel.app/ranking.html?lang=gl&n=10`
+  - `lang`: gl, es, ca ou eu (por defecto gl)
+  - `n`: cantos postos mostrar (por defecto 10)
+  - `p`: `hoxe` (por defecto), `onte` ou unha data `AAAA-MM-DD`
+  - `v`: non se usa (só hai un ranking, o do reto diario)
 
 ## Notas
 
