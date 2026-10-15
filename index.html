@@ -291,23 +291,23 @@ const PAPERS={
 const TECHS={
  aletas:{price:3,req:0},bico:{price:4,req:1},diedro:{price:4,req:1},clip:{price:2,req:1},
  puntas:{price:8,req:2},cinta:{price:5,req:2},dobre:{price:7,req:2},quilla:{price:12,req:3},curva:{price:15,req:4},
- regra:{price:6,req:1,tool:1},tesoiras:{price:8,req:2,tool:1},plegadeira:{price:12,req:3,tool:1}
+ regra:{price:6,req:1,tool:1},tirachinas:{price:30,req:6,tool:1},tesoiras:{price:8,req:2,tool:1},plegadeira:{price:12,req:3,tool:1}
 };
 const VENUES=[
- {id:'patio',    place:'patio',    kind:'dist',h:1.7,wind:0,  gust:0,  up:0,  entry:0, prizes:[4,2,1],     riv:[5,18],   gift:'tech:aletas'},
- {id:'ximnasio', place:'ximnasio', kind:'time',h:1.7,wind:0,  gust:0,  up:0,  entry:1, prizes:[8,4,2],     riv:[2,4.6],  gift:'plan:acrobata'},
- {id:'patioaim',tint:'morning', place:'patio',    kind:'aim', h:1.7,wind:0,  gust:0,  up:0,  entry:2, prizes:[10,5,2],    riv:[.2,3],   target:12},
- {id:'alameda',  place:'alameda',  kind:'dist',h:1.7,wind:-1, gust:.5, up:0,  entry:3, prizes:[15,8,4],    riv:[10,24],  gift:'tech:diedro'},
- {id:'ximaim',tint:'evening',   place:'ximnasio', kind:'aim', h:1.7,wind:0,  gust:0,  up:0,  entry:4, prizes:[20,10,5],   riv:[.2,3],   target:18},
- {id:'quintana', place:'quintana', kind:'aim', h:1.7,wind:-.5,gust:.4, up:0,  entry:5, prizes:[25,12,6],   riv:[.2,3.5], target:15, gift:'plan:aro'},
- {id:'alamtime',tint:'autumn', place:'alameda',  kind:'time',h:1.7,wind:-1, gust:.6, up:0,  entry:6, prizes:[30,15,7],   riv:[3,5.8],  gift:'tech:quilla'},
- {id:'muralla',  place:'muralla',  kind:'time',h:7,  wind:1,  gust:.6, up:.15,entry:8, prizes:[40,20,10],  riv:[8,19],   gift:'tech:cinta'},
- {id:'ximmix',tint:'night',   place:'ximnasio', kind:'mix', h:1.7,wind:0,  gust:0,  up:0,  entry:12,prizes:[55,25,12],  riv:[40,62]},
- {id:'riazor',   place:'riazor',   kind:'dist',h:1.7,wind:-3, gust:1.8,up:0,  entry:15,prizes:[70,35,15],  riv:[8,20],   gift:'plan:falcon'},
- {id:'quinmix',tint:'blue',  place:'quintana', kind:'mix', h:1.7,wind:-.5,gust:.4, up:0,  entry:20,prizes:[90,40,20],  riv:[42,66]},
- {id:'fistime',  place:'fisterra',kind:'time',h:15, wind:.6, gust:.8, up:0, ridge:1.25,entry:30,prizes:[160,70,35], riv:[16,36]},
- {id:'fisterra', place:'fisterra', kind:'dist',h:15, wind:2.5,gust:1.6,up:0,  entry:25,prizes:[130,60,30], riv:[70,150], gift:'tech:curva'},
- {id:'multiusos',place:'multiusos',kind:'mix', h:1.7,wind:0,  gust:0,  up:0,  entry:50,prizes:[400,150,70],riv:[48,70]}
+ {id:'patio',    place:'patio',    kind:'dist',h:1.7,wind:0,  gust:0,  up:0,  entry:0, prizes:[3,2,1],    riv:[8,21],   gift:'tech:aletas'},
+ {id:'ximnasio', place:'ximnasio', kind:'time',h:1.7,wind:0,  gust:0,  up:0,  entry:1, prizes:[5,3,1],    riv:[2.4,4.1],gift:'plan:acrobata'},
+ {id:'patioaim', place:'patio',    kind:'aim', h:1.7,wind:0,  gust:0,  up:0,  entry:1, prizes:[6,3,2],    riv:[.3,2],target:12},
+ {id:'alameda',  place:'alameda',  kind:'dist',h:1.7,wind:0,  gust:0,  up:0,  entry:2, prizes:[8,4,2],    riv:[12,25],  gift:'tech:diedro'},
+ {id:'ximaim',   place:'ximnasio', kind:'aim', h:1.7,wind:0,  gust:0,  up:0,  entry:2, prizes:[10,5,3],   riv:[.2,2],   target:18},
+ {id:'quintana', place:'quintana', kind:'aim', h:1.7,wind:0,  gust:0,  up:0,  entry:3, prizes:[12,6,3],   riv:[.2,1.8], target:15, gift:'plan:aro'},
+ {id:'alamtime', tint:'autumn',place:'alameda',kind:'time',h:1.7,wind:0,gust:0,up:0,entry:3,prizes:[14,7,4],riv:[3.6,5.6],gift:'tech:quilla'},
+ {id:'muralla',  place:'muralla',  kind:'time',h:7,  wind:0,  gust:0,  up:.15,entry:4, prizes:[18,9,5],   riv:[12,24],  gift:'tech:cinta'},
+ {id:'ximmix',   tint:'night',place:'ximnasio',kind:'mix',h:1.7,wind:0,gust:0,up:0,entry:6,prizes:[22,11,6],riv:[38,52]},
+ {id:'quinmix',  tint:'blue',place:'quintana',kind:'mix',h:1.7,wind:0,gust:0,up:0,entry:8,prizes:[28,14,7],riv:[42,58]},
+ {id:'fisterra', place:'fisterra', kind:'dist',h:15, wind:1.5,gust:.8, up:0,  entry:10,prizes:[40,20,10], riv:[75,115], gift:'tech:curva'},
+ {id:'fistime',  place:'fisterra', kind:'time',h:15, wind:.6, gust:.8, up:0, ridge:1.25,entry:12,prizes:[45,22,11],riv:[18,36],gift:'plan:helicoptero'},
+ {id:'riazor',   place:'riazor',   kind:'dist',h:1.7,wind:-2.5,gust:1.2,up:0, entry:14,prizes:[50,25,12], riv:[12,24],  gift:'plan:falcon'},
+ {id:'multiusos',place:'multiusos',kind:'mix', h:1.7,wind:0,  gust:0,  up:0,  entry:20,prizes:[100,50,25],riv:[50,66]}
 ];
 function emptyAdj(){return {n:0,w:0,d:0,e:0,c:0,nose:null,wl:false,clip:false,tape:false,dbl:false,fin:false}}
 function buildParams(pl){
@@ -330,7 +330,7 @@ function buildParams(pl){
   gust:(1-.35*A.d-.2*wl)*(1.4-.5*st)*(A.fin?.72:1)*(P.gustMul||1),
   wob:(1-p)*.6+(1-st)*.2+(1-c)*.5+.4*as+.012*(pl.twist||0),
   thrust:P.thrust||0,thrustT:P.thrustT||0,flap:(P.flap||0)*(.5+.5*p),flapT:P.flapT||0,
-  vfl:8+5*st+(P.vb||0)+(A.tape?.8:0)+(nose==='metida'?.8:0)
+  vfl:7+4*st+(P.vb||0)+(A.tape?.8:0)+(nose==='metida'?.8:0)
  };
 }
 function wearOf(pl){const P=PLANS[pl.plan],A=pl.adj,st=PAPERS[pl.paper].stiff,nose=A.nose||P.nose;
@@ -368,7 +368,7 @@ function simulate(p,launch,env,opts={}){
   let ax=(-D*ux/V-L*uy/V)/p.m, ay=(-D*uy/V+L*ux/V)/p.m-G;
   if(p.thrust&&t<p.thrustT){const f=p.thrust*(1-t/p.thrustT)/p.m;ax+=f*Math.cos(th);ay+=f*Math.sin(th)}
   if(p.flap&&t<p.flapT){const ph=Math.max(0,Math.sin(t*Math.PI*2*2.2))*(1-t/p.flapT),f=p.flap*ph/p.m;ax+=f*Math.cos(th+.6);ay+=f*Math.sin(th+.6)}
-  const trimEff=p.trim*Math.min(1.4,(Vref/V)**2);
+  const trimEff=p.trim*Math.min(1.4,(Vref/V)**2)+.35*fl;
   const turb=R()*env.gust*p.gust*40*.005/p.m;
   const qdot=-p.stab*V*V*(aoa-trimEff)-p.damp*V*q+turb+R()*(p.wob+fl*3)*40;
   vx+=ax*dt; vy+=ay*dt; q+=qdot*dt; th+=q*dt;
@@ -386,7 +386,7 @@ function throwSpeed(pl,power){const g=PAPERS[pl.paper].g+(pl.adj.clip?14:0);retu
 const ANGLES=[-5,0,5,10,15,20,25,30,40];
 function rate(pl){
  const p=buildParams(pl); let bestD=-1,bestA=0,bestT=0,bestW=-1;
- for(const pw of [.45,.7,.95]){const v=throwSpeed(pl,pw);
+ for(const pw of [.3,.5,.7,.9]){const v=throwSpeed(pl,pw);
   for(const a of ANGLES){
    const r=simulate(p,{v,ang:a*Math.PI/180},{h:1.7,wind:0,gust:0});
    if(r.x>bestD){bestD=r.x;bestA=a} if(r.t>bestT)bestT=r.t;
@@ -695,6 +695,20 @@ Object.assign(I18N.gl,{rankToday:'Ranking de hoxe',nick:'O teu alcume',send:'Env
 Object.assign(I18N.es,{rankToday:'Ranking de hoy',nick:'Tu alias',send:'Enviar',sentOk:'¡Enviado al ranking!',rankNone:'Aún nadie. ¡Sé el primero!',rankOff:'El ranking funciona en la versión publicada en Vercel.',rankErr:'No se pudo conectar con el ranking.'});
 Object.assign(I18N.ca,{rankToday:'Rànquing d’avui',nick:'El teu àlies',send:'Enviar',sentOk:'Enviat al rànquing!',rankNone:'Encara ningú. Sigues el primer!',rankOff:'El rànquing funciona a la versió publicada a Vercel.',rankErr:'No s’ha pogut connectar amb el rànquing.'});
 Object.assign(I18N.eu,{rankToday:'Gaurko sailkapena',nick:'Zure ezizena',send:'Bidali',sentOk:'Sailkapenera bidalita!',rankNone:'Inor ez oraindik. Izan lehena!',rankOff:'Sailkapenak Vercelen argitaratutako bertsioan funtzionatzen du.',rankErr:'Ezin izan da sailkapenarekin konektatu.'});
+
+Object.assign(I18N.gl,{firstWin:'Premio de estrea por gañar por primeira vez: +{m}',yourAng:'Lánzao arredor de {a}'});
+Object.assign(I18N.es,{firstWin:'Premio de estreno por ganar por primera vez: +{m}',yourAng:'Lánzalo alrededor de {a}'});
+Object.assign(I18N.ca,{firstWin:'Premi d’estrena per guanyar per primera vegada: +{m}',yourAng:'Llança’l al voltant de {a}'});
+Object.assign(I18N.eu,{firstWin:'Estreinako saria lehen aldiz irabazteagatik: +{m}',yourAng:'Jaurti {a} inguruan'});
+Object.assign(I18N.gl,{holdHint:'Mantén premido e solta. As marcas finas da barra son os teus tiros anteriores con este avión aquí: ángulo e resultado.'});
+Object.assign(I18N.es,{holdHint:'Mantén pulsado y suelta. Las marcas finas de la barra son tus tiros anteriores con este avión aquí: ángulo y resultado.'});
+Object.assign(I18N.ca,{holdHint:'Mantén premut i deixa anar. Les marques fines de la barra són els teus tirs anteriors amb aquest avió aquí: angle i resultat.'});
+Object.assign(I18N.eu,{holdHint:'Eutsi sakatuta eta askatu. Barrako marka finak hegazkin honekin hemen egindako aurreko jaurtiketak dira: angelua eta emaitza.'});
+
+Object.assign(I18N.gl,{t_tirachinas:'Tirachinas',td_tirachinas:'Ferramenta: lanzas estirando unha goma. Máis forza (+18 %) e o ángulo sae xusto, sen tremer; pero a tensión desgasta máis o avión.',hand:'Á man',sling:'Tirachinas',slingHint:'Estira cara atrás desde a man e solta: a dirección é o ángulo e o que estiras, a forza. As frechas de trazos son os teus tiros anteriores co tirachinas.',mapBtn:'Mapa',mapTitle:'Mapa: {p}',mapNote:'Cada punto é un tiro teu con este avión nesta proba (ángulo en vertical, forza en horizontal). Máis escuro = mellor. Os de bordo escuro foron co tirachinas.',mapEmpty:'Aínda non hai tiros con este avión aquí.',mapAim:'Diana',forceAxis:'Forza →',worse:'Peor',better:'Mellor',recipe:'Receita',recipeTitle:'A receita de Celia',recipeProg:'Receita: {n}/5 voos de proba',recAimTxt:'Cada 10 % máis de forza ≈ {m} m máis lonxe',recLimit:'«Non pases do {p} %: flamea e encabrítase.»',recNoLimit:'«Este aguanta forza: dálle sen medo.»',forceHigh:'forza alta',forceMid:'forza media',forceLow:'forza suave'});
+Object.assign(I18N.es,{t_tirachinas:'Tirachinas',td_tirachinas:'Herramienta: lanzas estirando una goma. Más fuerza (+18 %) y el ángulo sale exacto, sin temblar; pero la tensión desgasta más el avión.',hand:'A mano',sling:'Tirachinas',slingHint:'Estira hacia atrás desde la mano y suelta: la dirección es el ángulo y lo que estiras, la fuerza. Las flechas de trazos son tus tiros anteriores con el tirachinas.',mapBtn:'Mapa',mapTitle:'Mapa: {p}',mapNote:'Cada punto es un tiro tuyo con este avión en esta prueba (ángulo en vertical, fuerza en horizontal). Más oscuro = mejor. Los de borde oscuro fueron con tirachinas.',mapEmpty:'Aún no hay tiros con este avión aquí.',mapAim:'Diana',forceAxis:'Fuerza →',worse:'Peor',better:'Mejor',recipe:'Receta',recipeTitle:'La receta de Celia',recipeProg:'Receta: {n}/5 vuelos de prueba',recAimTxt:'Cada 10 % más de fuerza ≈ {m} m más lejos',recLimit:'«No pases del {p} %: flamea y se encabrita.»',recNoLimit:'«Este aguanta fuerza: dale sin miedo.»',forceHigh:'fuerza alta',forceMid:'fuerza media',forceLow:'fuerza suave'});
+Object.assign(I18N.ca,{t_tirachinas:'Tirador',td_tirachinas:'Eina: llances estirant una goma. Més força (+18 %) i l’angle surt exacte, sense tremolar; però la tensió desgasta més l’avió.',hand:'A mà',sling:'Tirador',slingHint:'Estira enrere des de la mà i deixa anar: la direcció és l’angle i el que estires, la força. Les fletxes de traços són els teus tirs anteriors amb el tirador.',mapBtn:'Mapa',mapTitle:'Mapa: {p}',mapNote:'Cada punt és un tir teu amb aquest avió en aquesta prova (angle en vertical, força en horitzontal). Més fosc = millor. Els de vora fosca van ser amb tirador.',mapEmpty:'Encara no hi ha tirs amb aquest avió aquí.',mapAim:'Diana',forceAxis:'Força →',worse:'Pitjor',better:'Millor',recipe:'Recepta',recipeTitle:'La recepta de la Celia',recipeProg:'Recepta: {n}/5 vols de prova',recAimTxt:'Cada 10 % més de força ≈ {m} m més lluny',recLimit:'«No passis del {p} %: flameja i s’encabrita.»',recNoLimit:'«Aquest aguanta força: dona-li sense por.»',forceHigh:'força alta',forceMid:'força mitjana',forceLow:'força suau'});
+Object.assign(I18N.eu,{t_tirachinas:'Tiragoma',td_tirachinas:'Tresna: goma bat tenkatuz jaurtitzen duzu. Indar gehiago (+% 18) eta angelua zehatz ateratzen da, dardararik gabe; baina tentsioak hegazkina gehiago higatzen du.',hand:'Eskuz',sling:'Tiragoma',slingHint:'Tenkatu atzera eskutik eta askatu: norabidea angelua da eta tenkatzen duzuna, indarra. Marratxodun geziak tiragomarekin egindako aurreko jaurtiketak dira.',mapBtn:'Mapa',mapTitle:'Mapa: {p}',mapNote:'Puntu bakoitza hegazkin honekin proba honetan egindako jaurtiketa bat da (angelua bertikalean, indarra horizontalean). Ilunagoa = hobea. Ertz ilunekoak tiragomarekin.',mapEmpty:'Oraindik ez dago jaurtiketarik hegazkin honekin hemen.',mapAim:'Itua',forceAxis:'Indarra →',worse:'Okerragoa',better:'Hobea',recipe:'Errezeta',recipeTitle:'Celiaren errezeta',recipeProg:'Errezeta: {n}/5 proba-hegaldi',recAimTxt:'% 10 indar gehiago ≈ {m} m urrunago',recLimit:'«Ez pasa % {p}-tik: dardaratu eta gora egiten du.»',recNoLimit:'«Honek indarra jasaten du: eman beldurrik gabe.»',forceHigh:'indar handia',forceMid:'indar ertaina',forceLow:'indar leuna'});
 // ===== SON (sintetizado, sen ficheiros) =====
 const SND=(()=>{
  let ctx=null,master=null,amb=null,noiseBuf=null;
@@ -795,7 +809,7 @@ function choosePlace(){
 }
 function freePlane(place){
  const v0=VENUES.find(v=>v.place===place),ok=S.planes.filter(p=>p.cond>0);
- dialog(`<h3>${esc(t('v_'+place))}</h3><p>${esc(t('choose'))}</p>`+ok.map(p=>`<button class="btn" style="display:flex;width:100%;margin:6px 0;align-items:center;gap:8px;text-align:left;font-weight:400" data-freego="${place}:${p.id}">${planeTop(p,40)}<span class="grow"><b>${esc(p.name)}</b><br><span class="muted">${esc(t('dist'))} ${f1(p.stats.dist)} m. ${esc(t('time'))} ${f1(p.stats.time)} s. ${esc(t('ang'))} ${p.stats.ang}°</span></span></button>`).join('')+`<p><button class="btn small" data-close>${esc(t('cancel'))}</button></p>`);
+ dialog(`<h3>${esc(t('v_'+place))}</h3><p>${esc(t('choose'))}</p>`+ok.map(p=>`<button class="btn" style="display:flex;width:100%;margin:6px 0;align-items:center;gap:8px;text-align:left;font-weight:400" data-freego="${place}:${p.id}">${planeTop(p,40)}<span class="grow"><b>${esc(p.name)}</b><br><span class="muted">${esc(t('dist'))} ${f1(p.stats.dist)} m. ${esc(t('time'))} ${f1(p.stats.time)} s. ${esc(t('ang'))} ${angRange(p.stats.ang)}</span></span></button>`).join('')+`<p><button class="btn small" data-close>${esc(t('cancel'))}</button></p>`);
 }
 let storyI=0;
 function showStory(){storyI=0;renderStory();$('story').classList.add('on')}
@@ -965,12 +979,13 @@ function statBars(r){
  return b('dist',r.dist,45,f1(r.dist)+' m')+b('time',r.time,9,f1(r.time)+' s')+b('wind',r.wind,32,f1(r.wind)+' m')+`<span>${esc(t('ang'))}</span><span></span><b>${r.ang}°</b>`;
 }
 function statCompact(r){const c=(k,v,max,txt)=>`<div><div class="k">${esc(t(k))}</div><div class="v">${txt}</div><div class="b"><i style="width:${Math.max(3,Math.min(100,v/max*100))}%"></i></div></div>`;
- return c('dist',r.dist,45,f1(r.dist)+' m')+c('time',r.time,9,f1(r.time)+' s')+c('wind',r.wind,32,f1(r.wind)+' m')+`<div><div class="k">${esc(t('ang'))}</div><div class="v">≈${r.ang}°</div></div>`}
+ return c('dist',r.dist,45,f1(r.dist)+' m')+c('time',r.time,9,f1(r.time)+' s')+c('wind',r.wind,32,f1(r.wind)+' m')+`<div><div class="k">${esc(t('ang'))}</div><div class="v">${angRange(r.ang)}</div></div>`}
 function updateStats(){clearTimeout(rateTimer);rateTimer=setTimeout(()=>{const el=$('stats');if(el)el.innerHTML=statCompact(rate({plan:W.plan,paper:W.paper,adj:W.adj,prec:.75,cond:100}))},80)}
+function angRange(a){const lo=Math.floor((a-3)/5)*5;return lo+'–'+(lo+10)+'°'}
 function symTxt(pl){const s=pl.asym||0,tr=pl.trimErr||0;let o=[];if(Math.abs(s)>=.08)o.push(t(s>0?'asymR':'asymL',{p:Math.round(Math.abs(s)*20)}));if(Math.abs(tr)>=.006)o.push(t(tr>0?'trimUp':'trimDn'));return o.join('. ')}
 function vDone(){
  const pl=S.planes.find(p=>p.id===W.done);if(!pl){W.done=null;return vWork()}
- $('main').innerHTML=`<h2>${esc(t('done'))}</h2><div class="card"><div style="display:flex;justify-content:center">${planeTop(pl,170)}</div><h3>${esc(pl.name)}</h3><p>${esc(t('prec'))}: <b>${Math.round(pl.prec*100)} %</b>${symTxt(pl)?`<br><span class="muted">${esc(symTxt(pl))}</span>`:`<br><span class="muted">${esc(t('symOk'))}</span>`}</p><div class="angbig"><span>${esc(t('yourAng',{a:pl.stats.ang}))}</span><small>${esc(t('angAfter'))}</small></div><div class="bars">${statBars(pl.stats)}</div></div>
+ $('main').innerHTML=`<h2>${esc(t('done'))}</h2><div class="card"><div style="display:flex;justify-content:center">${planeTop(pl,170)}</div><h3>${esc(pl.name)}</h3><p>${esc(t('prec'))}: <b>${Math.round(pl.prec*100)} %</b>${symTxt(pl)?`<br><span class="muted">${esc(symTxt(pl))}</span>`:`<br><span class="muted">${esc(t('symOk'))}</span>`}</p><div class="angbig"><span>${esc(t('yourAng',{a:angRange(pl.stats.ang)}))}</span><small>${esc(t('angAfter'))}</small></div><div class="bars">${statBars(pl.stats)}</div></div>
  <div class="row"><button class="btn primary" data-practice="${pl.id}">${esc(t('practice'))}</button><button class="btn" id="toHangar">${esc(t('toHangar'))}</button></div>`;
 }
 function vHangar(){
@@ -984,8 +999,9 @@ function vHangar(){
   return `<div class="hcard"><div class="hpic" style="background:linear-gradient(135deg,${Q.colors[pl.color]||Q.colors[0]}33,var(--paper2))">${planeTop(pl,96)}${inT?`<span class="tag hb">🏆 ${esc(t('inTour'))}</span>`:''}</div>
   <div class="hbody"><b class="hname">${esc(pl.name)}</b><div class="muted hsub">${esc(t('p_'+pl.plan))} · ${esc(t('q_'+pl.paper))}</div>
   <div class="cond2"><i style="width:${pl.cond}%;background:${cc}"></i>${(pl.maxc||100)<100?`<s style="left:${pl.maxc}%"></s>`:''}</div>
-  <div class="hstats"><span><small>${esc(t('dist'))}</small>${f1(pl.stats.dist)} m</span><span><small>${esc(t('time'))}</small>${f1(pl.stats.time)} s</span><span><small>${esc(t('ang'))}</small>${pl.stats.ang}°</span><span><small>${esc(t('prec'))}</small>${Math.round(pl.prec*100)}%</span></div>
+  <div class="hstats"><span><small>${esc(t('dist'))}</small>${f1(pl.stats.dist)} m</span><span><small>${esc(t('time'))}</small>${f1(pl.stats.time)} s</span><span><small>${esc(t('ang'))}</small>${angRange(pl.stats.ang)}</span><span><small>${esc(t('prec'))}</small>${Math.round(pl.prec*100)}%</span></div>
   ${symTxt(pl)?`<div class="muted hsub">${esc(symTxt(pl))}</div>`:''}
+  <div>${recipeLine(pl)}</div>
   <div class="hact"><button class="btn small primary" data-practice="${pl.id}">▶ ${esc(t('practice'))}</button>${inT?'':`${pl.cond<(pl.maxc||100)?`<button class="btn small" data-repair="${pl.id}" ${S.money<.5?'disabled':''} title="${esc(t('repairInfo'))}">🔧 ${money(.5)}</button>`:''}<button class="btn small" data-recycle="${pl.id}" title="${esc(t('recycleInfo',{m:money(.2)}))}">♻ +${money(.2)}</button>`}</div></div></div>`}).join('')+`</div>`;
  h+=`<p class="muted" style="font-size:.8rem;margin-top:12px">🔧 ${esc(t('repairInfo'))} ♻ ${esc(t('recycleInfo',{m:money(.2)}))}</p>`;
  $('main').innerHTML=h;
@@ -1126,10 +1142,12 @@ function foldLoop(){
 // ===== VOO =====
 const PRACTICE={id:'probas',place:'probas',kind:'dist',h:1.7,wind:0,gust:0,up:0};
 const cv=$('cv');let flyRAF=null;
+function windFor(v){if(!v.wind&&!v.gust)return {...v};const w=Math.round((v.wind+(Math.random()-.5)*.8)*10)/10;return {...v,wind:w}}
+function histKey(){return F.pl.id+'|'+F.base.id+(F.mode==='daily'&&typeof dayKey==='function'?dayKey():'')}
 function startFlight(venue,pl,mode,tourRivals){
- F={pig:null,venue,pl,mode,n:(mode==='comp'||mode==='daily')?3:Infinity,att:[],phase:'aim',angle:pl.stats?pl.stats.ang:10,power:0,hT:0,path:null,old:[],cam:{x:-3,y:0},broken:false,parts:[],relT:0,actAng:0,msg:'',ideal:1};
+ F={pig:null,base:venue,venue:windFor(venue),pl,mode,n:(mode==='comp'||mode==='daily')?3:Infinity,att:[],phase:'aim',angle:pl.stats?pl.stats.ang:10,power:0,hT:0,path:null,old:[],cam:{x:-3,y:0},broken:false,parts:[],relT:0,actAng:0,msg:'',ideal:1};
  if(tourRivals){F.rivals=tourRivals;F.tour=true}
- else if(mode==='comp'){const names=RIVALS.slice().sort(()=>Math.random()-.5).slice(0,4);const lb=lowerBetter(venue);
+ else if(mode==='comp'){const names=RIVALS.slice().sort(()=>Math.random()-.5).slice(0,4);const lb=lowerBetter(venue);const wk=1+.05*Math.min(4,(S.wins||{})[venue.id]||0);venue={...venue,riv:lb?[venue.riv[0]/wk,venue.riv[1]/wk]:[venue.riv[0]*wk,venue.riv[1]*wk]};
   F.rivals=names.map(nm=>{const lv=venue.riv[0]+Math.random()*(venue.riv[1]-venue.riv[0]);return {nm,th:[0,1,2].map(()=>lb?lv*(1+Math.random()*.9):lv*(.78+Math.random()*.22))}})}
  for(let i=0;i<46;i++)F.parts.push({x:Math.random()*60-10,y:.3+Math.random()*(venue.h+8),l:.5+Math.random()});
  $('fly').classList.add('on');$('flyBack').textContent='← '+t('back');$('flyTitle').textContent=mode==='practice'?t('v_'+venue.place):mode==='daily'?t('dailyTitle',{d:dailyLabel()})+' · '+t('v_'+venue.place):compName(venue);
@@ -1170,20 +1188,27 @@ const DELAY=.22;
 function startHold(){if(!F||F.phase!=='ready')return;F.phase='hold';F.hT=performance.now();const a=$('backAngBtn');if(a)a.disabled=true}
 function release(){
  if(!F||F.phase!=='hold')return;
- const now=performance.now(),hs=holdState(now);F.power=hs.p;F.actAng=Math.round((F.angle+sway(now,hs.amp))*10)/10;
- const pl=F.pl,p=buildParams(pl),v=throwSpeed(pl,F.power),env={...F.venue,seed:(Math.random()*1e9|0)+1};
+ const now=performance.now(),hs=holdState(now);throwNow(hs.p,Math.round((F.angle+sway(now,hs.amp))*10)/10,false);
+}
+// lanzamento común (man ou tirachinas)
+function throwNow(power,ang,sling){
+ const now=performance.now();F.power=power;F.actAng=ang;F.slingUsed=!!sling;
+ const pl=F.pl,p=buildParams(pl),v=throwSpeed(pl,F.power)*(sling?1.18:1),env={...F.venue,seed:(Math.random()*1e9|0)+1};
  const r=simulate(p,{v,ang:F.actAng*Math.PI/180},env,{path:true,every:4});
  SND.whoosh(F.power);
- F.msg=t('aimed',{a:dec(F.actAng.toFixed(1)),b:F.angle,p:Math.round(F.power*100)});
+ F.msg=t('aimed',{a:dec(F.actAng.toFixed(1)),b:sling?Math.round(ang):F.angle,p:Math.round(F.power*100)});
  F.path=r.path;F.res=r;F.t0=now+DELAY*1000;F.relT=now;F.phase='flying';flyUI();
 }
 function land(){
  const v=F.venue,r=F.res,sc=scoreOf(v,r);
  SND.tap();F.landT=performance.now();
+ {S.hist=S.hist||{};const hk=histKey(),H=S.hist[hk]=(S.hist[hk]||[]);H.push({a:Math.round(F.actAng),p:Math.round(F.power*100)/100,sc:Math.round(sc*10)/10,x:Math.round(r.x*10)/10,t:Math.round(r.t*10)/10,w:F.venue.wind||0,s:F.slingUsed?1:0});if(H.length>40)H.shift();
+  F.oldInfo=F.oldInfo||[];F.oldInfo.push({x:r.x,p:F.power,a:Math.round(F.actAng)});if(F.oldInfo.length>3)F.oldInfo.shift();
+  if(F.mode==='practice'){S.rec=S.rec||{};S.rec[F.pl.id]=(S.rec[F.pl.id]||0)+1}}
  {const prev=S.best[v.id],all=F.att.map(a=>a.sc);const better=prev===undefined?false:(lowerBetter(v)?sc<prev:sc>prev);const sess=all.length&&(lowerBetter(v)?sc<Math.min(...all):sc>Math.max(...all));F.recT=better&&(sess||!all.length)?performance.now():0;
   if(F.mode==='practice'&&(prev===undefined||better)){S.best[v.id]=sc;save()}}
  F.att.push({x:r.x,t:r.t,sc});F.old.push(F.path);if(F.old.length>3)F.old.shift();
- if(F.mode==='comp'){F.pl.cond=Math.max(0,F.pl.cond-Math.round(wearOf(F.pl)+Math.random()*3));
+ if(F.mode==='comp'){F.pl.cond=Math.max(0,F.pl.cond-Math.round(wearOf(F.pl)*(F.slingUsed?1.5:1)+Math.random()*3));
   if(F.pl.cond<=0){F.broken=true;S.planes=S.planes.filter(p=>p!==F.pl)}save()}
  F.phase='landed';flyUI();
 }
@@ -1195,7 +1220,8 @@ function results(){
  const v=F.venue,best=bestOf(v,F.att.map(a=>a.sc)),lb=lowerBetter(v);
  const list=F.rivals.map(r=>({nm:r.nm,sc:bestOf(v,r.th)})).concat([{nm:t('you'),sc:best,me:true}]).sort((a,b)=>lb?a.sc-b.sc:b.sc-a.sc);
  const rank=list.findIndex(x=>x.me),prize=rank<3?v.prizes[rank]:0;
- S.money+=prize;if(S.best[v.id]===undefined||(lb?best<S.best[v.id]:best>S.best[v.id]))S.best[v.id]=best;
+ let bonus=0;if(rank===0){S.wins=S.wins||{};if(!S.wins[v.id])bonus=v.prizes[0];S.wins[v.id]=(S.wins[v.id]||0)+1}
+ S.money+=prize+bonus;if(S.best[v.id]===undefined||(lb?best<S.best[v.id]:best>S.best[v.id]))S.best[v.id]=best;
  const vi=VENUES.indexOf(v);let msg='',gift='';
  if(rank<3&&vi+1===S.unlocked&&S.unlocked<VENUES.length){S.unlocked++;msg=t('unlockedMsg',{v:compName(VENUES[vi+1])})+' '+t('newstuff')}
  if(rank<3&&!S.podium[v.id]){S.podium[v.id]=1;if(v.gift){const[k,id]=v.gift.split(':');
@@ -1205,7 +1231,7 @@ function results(){
  const pod=[1,0,2].map(i=>list[i]?`<div class="col p${i+1} ${list[i].me?'me':''}">${list[i].me?`<img class="medimg" src="${EX('med'+(i+1))}" alt="">`:rivalImg(list[i].nm,'rpb')}<b>${esc(list[i].nm)}</b><span class="muted">${esc(fmtScore(v,list[i].sc))}</span><div class="blk">${i+1}</div></div>`:'<div></div>').join('');
  if(prize)SND.coin();if(rank<3)setTimeout(()=>SND.cheer(),300);
  dialog(`<h3>${esc(t('ranking'))}: ${esc(compName(v))}</h3><div class="podium">${pod}</div>${list.length>3?`<table class="rank">${list.slice(3).map((x,i)=>`<tr class="${x.me?'me':''}"><td>${i+4}.</td><td>${rivalImg(x.me?'':x.nm)}${esc(x.nm)}</td><td style="text-align:right">${esc(fmtScore(v,x.sc))}</td></tr>`).join('')}</table>`:''}
- <p><b>${prize?esc(t('won',{m:money(prize)})):esc(t('noprize'))}</b></p>${msg?`<p>${esc(msg)}</p>`:''}
+ <p><b>${prize?esc(t('won',{m:money(prize)})):esc(t('noprize'))}</b>${bonus?`<br>✨ ${esc(t('firstWin',{m:money(bonus)}))}`:''}</p>${msg?`<p>${esc(msg)}</p>`:''}
  ${gift?`<div class="celia">${celiaSVG(72)}<div class="bubble">${esc(t('gift',{x:gift}))}</div></div>`:''}
  <p><button class="btn primary" data-closefly>${esc(t('back'))}</button></p>`);
 }
@@ -1250,7 +1276,8 @@ function flyLoop(now){
  const trail=(path,upto,col,w)=>{x.strokeStyle=col;x.lineWidth=w*d;x.setLineDash([2*d,5*d]);x.beginPath();for(let i=0;i<=upto&&i<path.length;i+=2){const[a,b]=path[i];i?x.lineTo(X(a),Y(b)):x.moveTo(X(a),Y(b))}x.stroke();x.setLineDash([])};
  F.old.forEach(p=>{if(p!==F.path||F.phase!=='landed')trail(p,p.length,'rgba(255,248,239,.55)',1.5)});
  if(idx>=0)trail(F.path,idx,'#fff8ef',2.2);
- F.old.forEach(p=>{const l=p[p.length-1],lx=X(l[0]);x.strokeStyle=INK;x.lineWidth=1.2*d;x.beginPath();x.moveTo(lx,Y(0));x.lineTo(lx,Y(0)-20*d);x.stroke();x.fillStyle='#c85b47';x.beginPath();x.moveTo(lx,Y(0)-20*d);x.lineTo(lx+12*d,Y(0)-16*d);x.lineTo(lx,Y(0)-12*d);x.fill()});
+ F.old.forEach((p,i)=>{const l=p[p.length-1],lx=X(l[0]),inf=(F.oldInfo||[])[i]||null,last=i===F.old.length-1;x.strokeStyle=INK;x.lineWidth=1.2*d;x.beginPath();x.moveTo(lx,Y(0));x.lineTo(lx,Y(0)-34*d);x.stroke();x.fillStyle=last?'#c85b47':'#fff8ef';x.beginPath();x.moveTo(lx,Y(0)-34*d);x.lineTo(lx+12*d,Y(0)-30*d);x.lineTo(lx,Y(0)-26*d);x.fill();
+  if(inf){const txt=Math.round(inf.p*100)+' % · '+inf.a+'°',tw=x.measureText(txt).width;x.font=`600 ${10*d}px Montserrat, sans-serif`;const w2=x.measureText(txt).width+10*d,yy=Y(0)-(50+(i%2)*16)*d;x.fillStyle=last?'#c85b47':'rgba(255,248,239,.92)';x.fillRect(lx-w2/2,yy-12*d,w2,16*d);x.fillStyle=last?'#fff8ef':'#2e2e2e';x.textAlign='center';x.fillText(txt,lx,yy)}});
  if(F.phase==='aim'||F.phase==='ready'||F.phase==='hold'){const L=1.7*s,hp=handPos(top,now);const arrow=(ang,col,w,dash)=>{const a=ang*Math.PI/180;x.strokeStyle=col;x.lineWidth=w*d;x.setLineDash(dash);x.beginPath();x.moveTo(X(hp[0]),Y(hp[1]));x.lineTo(X(hp[0])+L*Math.cos(a),Y(hp[1])-L*Math.sin(a));x.stroke();x.setLineDash([])};
   arrow(F.angle,'rgba(255,248,239,.7)',1.2,[3*d,4*d]);arrow(curAng,'#fff8ef',2.2,[7*d,5*d]);
   const ra=.8*s,a0=0,a1=-curAng*Math.PI/180;x.strokeStyle='#fff8ef';x.lineWidth=1.4*d;x.beginPath();x.arc(X(hp[0]),Y(hp[1]),ra,Math.min(a0,a1),Math.max(a0,a1));x.stroke();
@@ -1265,14 +1292,14 @@ function flyLoop(now){
  else{const hp=handPos(top,now);drawPlane(x,X(hp[0]),Y(hp[1]),pth,Math.max(46*d,.5*s),F.pl,d)}
  // forza
  if(F.phase==='hold'||F.phase==='ready'){const bw=Math.min(Wd*.62,340*d),bh=12*d,bx=(Wd-bw)/2,by=H-gp*.45;
-  x.fillStyle='rgba(46,46,46,.85)';x.font=`600 ${11*d}px Montserrat, sans-serif`;x.textAlign='left';x.fillText(t('ideal'),bx,by-8*d);
   const gr=x.createLinearGradient(bx,0,bx+bw,0);gr.addColorStop(0,'#f7e7d3');gr.addColorStop(1,'#e69b7a');x.fillStyle=gr;x.fillRect(bx,by,bw,bh);
-  const lo=Math.max(0,F.ideal-.07),hi=Math.min(1,F.ideal+.07);x.fillStyle='#5b8f7b';x.fillRect(bx+bw*lo,by,bw*(hi-lo),bh);
-  x.fillStyle='#fff8ef';x.fillRect(bx+bw*F.ideal-1*d,by-3*d,2*d,bh+6*d);
+  x.font=`600 ${10*d}px Montserrat, sans-serif`;x.textAlign='center';
+  if(F.mode==='practice'){x.fillStyle='#5b8f7b';x.fillRect(bx+bw*F.ideal-1*d,by-3*d,2*d,bh+6*d)}
   const pw=F.phase==='hold'?F.power:0;x.fillStyle='rgba(200,91,71,.85)';x.fillRect(bx,by+bh*.3,bw*pw,bh*.4);
-  if(pw>0){x.fillStyle='#2e2e2e';x.beginPath();x.moveTo(bx+bw*pw,by-2*d);x.lineTo(bx+bw*pw-5*d,by-9*d);x.lineTo(bx+bw*pw+5*d,by-9*d);x.fill()}}
+  if(pw>0){x.fillStyle='#2e2e2e';x.beginPath();x.moveTo(bx+bw*pw,by+bh+2*d);x.lineTo(bx+bw*pw-5*d,by+bh+9*d);x.lineTo(bx+bw*pw+5*d,by+bh+9*d);x.fill()}}
  if(F.phase==='done'||F.phase==='landed'){}
  if(F.recT&&now-F.recT<2200){const tt=(now-F.recT)/1000;x.save();x.globalAlpha=Math.min(1,(2.2-tt)*2);x.font=`700 ${Math.round(26*d*(1+.15*Math.max(0,.3-tt)))}px Playfair Display, serif`;x.textAlign='center';x.fillStyle='#fff8ef';x.strokeStyle='#c85b47';x.lineWidth=5*d;x.strokeText(t('record'),Wd/2,H*.3-tt*12*d);x.fillText(t('record'),Wd/2,H*.3-tt*12*d);x.restore()}
+ {const hp=handPos(top,now);F._hs=[X(hp[0]),Y(hp[1])];F._U=Math.min(H,Wd*.8);if(F.sling&&F.phase==='aim')drawSling(x,d,now,v)}
  const hud=$('hud'),bestTxt=F.att.length?`<small>${esc(t('best'))}: ${esc(fmtScore(v,bestOf(v,F.att.map(a=>a.sc))))}</small>`:'';
  if(idx>=0){const extra=v.kind==='aim'?`<small>${esc(t('aimres',{d:f1(Math.abs(Math.max(0,px)-v.target))}))}</small>`:'';hud.innerHTML=`${f1(Math.max(0,px))} m<small>${f1(pt)} s</small>${extra}${bestTxt}`}
  else hud.innerHTML=bestTxt;
@@ -1603,7 +1630,7 @@ document.addEventListener('click',e=>{
  if(D.go){const[vi,pid]=D.go.split(':');const v=VENUES[+vi],pl=S.planes.find(p=>p.id==pid);if(pl&&S.money>=v.entry){S.money-=v.entry;save();closeDlg();render();startFlight(v,pl,'comp')}return}
  if(D.close!==undefined){closeDlg();render();return}
  if(D.closefly!==undefined){exitFly();return}
-  if(b.id==='againBtn'){F.phase='aim';F.path=null;F.pig=null;flyUI();return}
+  if(b.id==='againBtn'){F.phase='aim';F.path=null;F.pig=null;F.venue=windFor(F.base);calcIdeal();flyUI();return}
  if(b.id==='resBtn'||b.id==='standBtn'){results();return}
  if(D.sec){shopSec=D.sec;render();return}
  if(D.repair){const pl=S.planes.find(p=>p.id==D.repair);if(pl&&S.money>=.5){S.money-=.5;pl.maxc=(pl.maxc||100);pl.cond=Math.min(pl.maxc,pl.cond+30);pl.maxc=Math.max(30,pl.maxc-12);pl.cond=Math.min(pl.cond,pl.maxc);save();render()}return}
@@ -1640,7 +1667,7 @@ function dailyInfo(){
  const R=seeded('reto'+key),pickR=a=>a[Math.floor(R()*a.length)];
  const place=pickR(['patio','ximnasio','alameda','quintana','muralla','riazor','fisterra','multiusos']);
  const base=VENUES.find(v=>v.place===place&&v.kind!=='mix')||VENUES.find(v=>v.place===place);
- const indoor=place==='ximnasio'||place==='multiusos';
+ const indoor=!['fisterra','riazor'].includes(place);
  let kind=pickR(base.h>2?['dist','time','time']:['dist','time','aim']);
  const v={...base,id:'daily',kind,target:kind==='aim'?Math.round(9+R()*11):undefined,wind:indoor?0:Math.round((base.wind+(R()-.5)*2.4)*10)/10,gust:indoor?0:Math.round(R()*12)/10,ridge:base.ridge||0};
  const plans=Object.keys(PLANS).filter(k=>!PLANS[k].heli||base.h>2);const plan=pickR(plans);
@@ -1715,10 +1742,92 @@ document.addEventListener('click',async e=>{const b=e.target.closest('button');i
  try{await supaSend({dia:D.key,xogador:myId(),nome:nick,modalidade:D.v.kind,valor:Math.round(st.best*100)/100,cadrados:st.sq});st.sent=1;save();toast(t('sentOk'));dailyRankFill()}
  catch(err){b.disabled=false;toast(t('rankErr'))}
 });
+// ===== MAPA DO AVIÓN, RECEITA DE CELIA E TIRACHINAS =====
+// --- tirachinas: debuxo das gomas e das frechas pantasma
+function slingR(){return (F._U||400)*.32}
+function drawSling(x,d,now,v){
+ const h=F._hs;if(!h)return;const R=slingR();
+ x.save();x.font=`600 ${10*d}px Montserrat, sans-serif`;x.textAlign='left';
+ const Hh=((S.hist||{})[histKey()]||[]).filter(e=>e.s).slice(-4);
+ Hh.forEach((e,i)=>{const a=e.a*Math.PI/180,L=R*e.p;x.globalAlpha=.25+.5*(i+1)/Hh.length;x.strokeStyle='#2e2e2e';x.setLineDash([3*d,5*d]);x.lineWidth=1.5*d;x.beginPath();x.moveTo(h[0],h[1]);x.lineTo(h[0]+L*Math.cos(a),h[1]-L*Math.sin(a));x.stroke();x.setLineDash([]);
+  x.fillStyle='#2e2e2e';x.fillText(e.a+'° · '+Math.round(e.p*100)+' % → '+fmtScore(v,e.sc).replace(/^a /,''),h[0]+L*Math.cos(a)+4*d,h[1]-L*Math.sin(a)-4*d)});
+ x.globalAlpha=1;
+ // escala da tensión
+ x.strokeStyle='rgba(46,46,46,.25)';x.lineWidth=1*d;[.25,.5,.75,1].forEach(k=>{x.beginPath();x.arc(h[0],h[1],R*k,Math.PI*.55,Math.PI*1.05);x.stroke();x.fillStyle='rgba(46,46,46,.55)';x.fillText(Math.round(k*100)+'',h[0]-R*k-14*d,h[1]+14*d)});
+ if(F.pull){const p=F.pull.cur,dx=h[0]-p[0],dy=h[1]-p[1],len=Math.min(R,Math.hypot(dx,dy)),ang=Math.max(-10,Math.min(50,Math.atan2(p[1]-h[1],h[0]-p[0])*180/Math.PI)),pw=len/R;
+  F.pull.ang=ang;F.pull.pw=pw;const ex=h[0]-Math.cos(ang*Math.PI/180)*len,ey=h[1]+Math.sin(ang*Math.PI/180)*len;
+  x.strokeStyle='#7a4a33';x.lineWidth=3*d;x.beginPath();x.moveTo(h[0]-6*d,h[1]-8*d);x.lineTo(ex,ey);x.lineTo(h[0]+6*d,h[1]+8*d);x.stroke();
+  x.fillStyle='#fff8ef';x.strokeStyle='#2e2e2e';x.lineWidth=2*d;x.beginPath();x.arc(ex,ey,10*d,0,7);x.fill();x.stroke();
+  const a=ang*Math.PI/180,L=R*pw;x.strokeStyle='#c85b47';x.lineWidth=3*d;x.beginPath();x.moveTo(h[0],h[1]);x.lineTo(h[0]+L*Math.cos(a),h[1]-L*Math.sin(a));x.stroke();
+  x.fillStyle='#2e2e2e';x.font=`700 ${16*d}px Playfair Display, serif`;x.fillText(Math.round(ang)+'° · '+Math.round(pw*100)+' %',h[0]+12*d,h[1]-R*.55)}
+ x.restore();
+}
+function cvPt(e){const r=cv.getBoundingClientRect();return [(e.clientX-r.left)*cv.width/r.width,(e.clientY-r.top)*cv.height/r.height]}
+document.addEventListener('pointerdown',e=>{if(!F||e.target.id!=='cv'||F.phase!=='aim'||!F.sling)return;e.stopImmediatePropagation();e.preventDefault();F.pull={cur:cvPt(e)}},true);
+function pullCalc(){const h=F._hs,p=F.pull.cur;if(!h)return;const R=slingR(),len=Math.min(R,Math.hypot(h[0]-p[0],h[1]-p[1]));F.pull.ang=Math.max(-10,Math.min(50,Math.atan2(p[1]-h[1],h[0]-p[0])*180/Math.PI));F.pull.pw=len/R}
+document.addEventListener('pointermove',e=>{if(F&&F.pull){F.pull.cur=cvPt(e);pullCalc()}},true);
+document.addEventListener('pointerup',e=>{if(!F||!F.pull)return;F.pull.cur=cvPt(e);pullCalc();const P=F.pull;F.pull=null;if(P.pw>.08){const jit=(Math.random()-.5)*.04;throwNow(Math.max(.05,Math.min(1,P.pw+jit)),Math.round(P.ang*10)/10,true)}},true);
+// --- botóns extra no lanzamento
+const _flyUI0=flyUI;
+flyUI=function(){
+ _flyUI0();if(!F||!['aim','ready'].includes(F.phase))return;
+ const c=$('flyCtrl'),has=S.techs.includes('tirachinas'),rec=recipeKnown(F.pl);if(F.sling===undefined)F.sling=has&&!!S.lastSling;if(!has)F.sling=false;
+ const bar=`<div class="row" style="grid-column:1/-1;gap:6px">${`<button class="btn small" id="mapBtn">▦ ${esc(t('mapBtn'))}</button>`}${rec?`<button class="btn small" id="recBtn">✎ ${esc(t('recipe'))}</button>`:''}${has&&F.phase==='aim'?`<button class="btn small" id="slingTog" aria-pressed="${!!F.sling}">${esc(F.sling?t('sling'):t('hand'))} ⇄</button>`:''}</div>`;
+ if(F.sling&&F.phase==='aim')c.innerHTML=`<div class="muted" style="font-size:.84rem;grid-column:1/-1">${esc(t('slingHint'))}</div>`+bar;
+ else c.insertAdjacentHTML('afterbegin',bar);
+};
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!F)return;
+ if(b.id==='slingTog'){F.sling=!F.sling;S.lastSling=F.sling;save();flyUI();return}
+ if(b.id==='mapBtn'){F.mapTab=F.mapTab||(F.venue.kind==='time'?'t':F.venue.kind==='aim'?'aim':'x');showMap();return}
+ if(b.dataset.maptab){F.mapTab=b.dataset.maptab;showMap();return}
+ if(b.id==='recBtn'){showRecipe(F.pl);return}
+});
+// --- mapa ángulo × forza
+function showMap(){
+ const H=(S.hist||{})[histKey()]||[],v=F.venue,tab=F.mapTab;
+ const val=h=>tab==='x'?h.x:tab==='t'?h.t:Math.abs((h.x||0)-(v.target||0));const lb=tab==='aim';
+ const vals=H.map(val).filter(n=>n!=null&&!isNaN(n));const mn=Math.min(...vals),mx=Math.max(...vals);
+ const col=h=>{let k=mx>mn?(val(h)-mn)/(mx-mn):1;if(lb)k=1-k;return ['#f2dcc4','#e69b7a','#c85b47','#8f3a2c'][Math.min(3,Math.floor(k*3.999))]};
+ const X=p=>40+p*300,Y=a=>250-(a+10)/60*240;
+ const pts=H.map(h=>`<circle cx="${X(h.p).toFixed(1)}" cy="${Y(h.a).toFixed(1)}" r="8" fill="${col(h)}" stroke="${h.s?'#2e2e2e':'#fff8ef'}" stroke-width="${h.s?2:1}"><title>${h.a}° · ${Math.round(h.p*100)} % → ${esc(fmtScore(tab==='x'?{kind:'dist'}:tab==='t'?{kind:'time'}:v,val(h)))}</title></circle>`).join('');
+ const tabs=[['x','dist'],['t','time']].concat(v.kind==='aim'?[['aim','k_dist']]:[]).map(([k,l])=>`<button class="chip" data-maptab="${k}" aria-pressed="${tab===k}">${esc(k==='aim'?t('mapAim'):t(l))}</button>`).join('');
+ dialog(`<h3 style="font-family:var(--draft);font-size:1.15rem">${esc(t('mapTitle',{p:F.pl.name}))}</h3><div class="chips">${tabs}</div>
+ ${H.length?`<svg viewBox="0 0 350 290" width="100%" role="img" aria-label="${esc(t('mapNote'))}"><rect x="40" y="10" width="300" height="240" fill="#f7e7d3"/>
+ ${[0,10,20,30,40].map(a=>`<line x1="40" x2="340" y1="${Y(a)}" y2="${Y(a)}" stroke="#e3c8ae"/><text x="6" y="${Y(a)+4}" font-size="11" fill="#6b5444">${a}°</text>`).join('')}
+ ${[.25,.5,.75,1].map(p=>`<line y1="10" y2="250" x1="${X(p)}" x2="${X(p)}" stroke="#e3c8ae"/><text x="${X(p)-12}" y="268" font-size="11" fill="#6b5444">${p*100}%</text>`).join('')}
+ <line x1="40" x2="340" y1="${Y(F.angle)}" y2="${Y(F.angle)}" stroke="#2e2e2e" stroke-dasharray="3 4"/>${pts}<text x="150" y="286" font-size="11" font-weight="600" fill="#6b5444">${esc(t('forceAxis'))}</text></svg>
+ <div class="row muted" style="font-size:.78rem;gap:6px">${esc(t('worse'))} <span class="swatch" style="background:#f2dcc4"></span><span class="swatch" style="background:#e69b7a"></span><span class="swatch" style="background:#c85b47"></span><span class="swatch" style="background:#8f3a2c"></span> ${esc(t('better'))}</div>
+ <p class="muted" style="font-size:.8rem">${esc(t('mapNote'))}</p>`:`<p class="muted">${esc(t('mapEmpty'))}</p>`}
+ <p><button class="btn primary small" data-close>${esc(t('close'))}</button></p>`);
+}
+// --- receita de Celia: aprendida tras 5 voos de proba co mesmo avión
+function recipeKnown(pl){return pl&&pl.id>0&&((S.rec||{})[pl.id]||0)>=5}
+const _recCache={};
+function recipeFor(pl){
+ const k=pl.id+'|'+pl.cond;if(_recCache[k])return _recCache[k];
+ const p=buildParams(pl),env={h:1.7,wind:0,gust:0};let bd={s:0},bt={s:0};const grid={};
+ for(const a of [-5,0,5,10,15,20,25])for(let i=1;i<=10;i++){const pw=i/10,r=simulate(p,{v:throwSpeed(pl,pw),ang:a*Math.PI/180},{...env,seed:5});grid[a+'|'+i]=r.x;if(r.x>bd.s)bd={s:r.x,a,p:pw};if(r.t>bt.s)bt={s:r.t,a,p:pw}}
+ let lim=null;for(let i=Math.round(bd.p*10)+1;i<=10;i++){if(grid[bd.a+'|'+i]<bd.s*.9){lim=i*10;break}}
+ const slope=Math.max(.2,((grid[bd.a+'|6']||0)-(grid[bd.a+'|5']||0)));
+ return _recCache[k]={d:bd,t:bt,lim,slope};
+}
+function forceWord(p){return t(p>=.75?'forceHigh':p>=.45?'forceMid':'forceLow')}
+function showRecipe(pl){
+ const R=recipeFor(pl),band=(p,c)=>`<svg width="200" height="10" viewBox="0 0 200 10" aria-hidden="true"><rect width="200" height="10" rx="3" fill="#f2dcc4"/><rect x="${Math.max(0,(p-.1)*200)}" width="40" height="10" fill="${c}"/></svg>`;
+ dialog(`<div class="celia">${celiaSVG(56)}<div><h3 style="font-family:var(--draft);font-size:1.15rem;margin:0">${esc(t('recipeTitle'))}</h3><div class="muted">${esc(pl.name)}</div></div></div>
+ <div style="display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px 12px;align-items:center;margin:12px 0;font-size:.9rem">
+ <b>${esc(t('dist'))}</b><div>${angRange(R.d.a)} · ${esc(forceWord(R.d.p))}<br>${band(R.d.p,'#c85b47')}</div>
+ <b>${esc(t('time'))}</b><div>${angRange(R.t.a)} · ${esc(forceWord(R.t.p))}<br>${band(R.t.p,'#5a8bb8')}</div>
+ <b>${esc(t('mapAim'))}</b><div>${esc(t('recAimTxt',{m:dec(R.slope.toFixed(1))}))}</div></div>
+ <div class="bubble">${esc(R.lim?t('recLimit',{p:R.lim}):t('recNoLimit'))}</div>
+ <p><button class="btn primary small" data-close>${esc(t('close'))}</button></p>`);
+}
+function recipeLine(pl){const n=(S.rec||{})[pl.id]||0;return recipeKnown(pl)?`<button class="btn small" data-recipe="${pl.id}">✎ ${esc(t('recipe'))}</button>`:`<span class="muted" style="font-size:.76rem">${esc(t('recipeProg',{n:Math.min(5,n)}))}</span>`}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!b.dataset.recipe)return;const pl=S.planes.find(p=>p.id==b.dataset.recipe);if(pl)showRecipe(pl)});
 // ===== TORNEOS: maletín limitado de avións e probas sorpresa =====
 const TOURS=[
- {id:'outono',req:5,set:3,tests:4,entry:20,prizes:[150,70,35]},
- {id:'mundial',req:12,set:5,tests:6,entry:80,prizes:[900,350,150]}
+ {id:'outono',req:5,set:3,tests:4,entry:10,prizes:[60,30,15]},
+ {id:'mundial',req:12,set:5,tests:6,entry:30,prizes:[250,120,60]}
 ];
 const TPTS=[10,7,5,3,2,1];
 function tourOpen(T){return S.unlocked>T.req}
